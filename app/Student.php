@@ -10,13 +10,11 @@ class Student extends Model
     
     public function locker()
     {
-        // FIXME 3
-        return $this->___3___('App\__?__');
+        return $this->belongsTo('App\Locker');
     }
 
     public function adviser()
     {
-        // FIXME 4
-        return $this->___4___;
+        return $this->belongsTo('App\Adviser');
     }
 }

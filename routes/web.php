@@ -17,49 +17,49 @@ use App\Locker;
 
 $router->get('/reports/students', function () {
     // FIXME 5
-    $students = Student::___5___();
+    $students = Student::all();
     
     // print header
     echo "student_id,first_name,last_name,adviser_id,adviser_first_name,adviser_last_name<br>";
     
         foreach ($students as $student) {
             // FIXME 6
-            $adviser = $student->___6___;
+            $adviser = $student->adviser;
     
             // FIXME 7-9
-            echo "$student->id,$student->first_name,$student->last_name,$adviser->___7___,$adviser->___8___,$adviser->___9___<br>";
+            echo "$student->id,$student->first_name,$student->last_name,$adviser->id,$adviser->first_name,$adviser->last_name<br>";
         }
 });
 
 $router->get('/reports/lockers', function () {
     // FIXME 10
-    $lockers = Locker::___10___();
+    $lockers = Locker::all();
 
     // print header
     echo "locker_id,student_id,student_first_name<br>";
 
     foreach ($lockers as $locker) {
         // FIXME 11
-        $student = $locker->___11___;
+        $student = $locker->Student;
         // FIXME 12-13
-        echo "$locker->id,{$student->___12___},{$student->___13___}<br>";
+        echo "$locker->id,{$student->id},{$student->first_name}<br>";
     }
 });
 
 $router->get('/reports/advisers', function () {
     // FIXME 14
-    $advisers = Adviser::___14___();
+    $advisers = Adviser::all();
 
     // print header
     echo "adviser_id,adviser_first_name,adviser_last_name,student_id<br>";
 
     foreach ($advisers as $adviser) {
         // FIXME 15
-        $students = $adviser->___15___;
+        $students = $adviser->students;
 
         foreach ($students as $student) {
             // FIXME 16
-            echo "$adviser->id,$adviser->first_name,$adviser->last_name,$student->___16___<br>";
+            echo "$adviser->id,$adviser->first_name,$adviser->last_name,$student->id<br>";
         }
     }
 });
