@@ -11,6 +11,6 @@ class Adviser extends Model
     function students()
     {
         // FIXME 1
-        return $this->___1___('App\__?__');
+        return $this->hasMany('App\Student');
     }
 }

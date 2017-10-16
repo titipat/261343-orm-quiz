@@ -11,6 +11,6 @@ class Locker extends Model
     function student()
     {
         // FIXME 2
-        return $this->___2___('App\__?__');
+        return $this->belongsTo('App\Student');
     }
 }
